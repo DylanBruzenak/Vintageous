@@ -1500,9 +1500,6 @@ class _vi_e(sublime_plugin.TextCommand):
                 if(view.line(pt).empty()):
                     return s
 
-                if ((pt == view.size) - 1):
-                    pt = utils.previous_non_white_space_char(view, pt - 1,
-                                                            white_space='\n')
                 return sublime.Region(pt, pt)
             elif mode == MODE_VISUAL:
                 pt = units.word_ends(view, start=s.b - 1, count=count)
