@@ -724,7 +724,7 @@ class ViBufferSearch(IrreversibleTextCommand):
         state.eval()
 
     def on_change(self, s):
-        flags = sublime.IGNORECASE | sublime.LITERAL
+        flags = sublime.IGNORECASE
         self.view.erase_regions('vi_inc_search')
         state = VintageState(self.view)
         next_hit = find_wrapping(self.view,
@@ -773,7 +773,7 @@ class ViBufferReverseSearch(IrreversibleTextCommand):
         state.eval()
 
     def on_change(self, s):
-        flags = sublime.IGNORECASE | sublime.LITERAL
+        flags = sublime.IGNORECASE
         self.view.erase_regions('vi_inc_search')
         state = VintageState(self.view)
         occurrence = reverse_find_wrapping(self.view,
